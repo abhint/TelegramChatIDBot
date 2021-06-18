@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Copyright 2021 ABHIJITH N T
-URL : https://github.com/Abhijith-cloud/
+URL : https://github.com/AbhijithNT/
 
 """
 
