@@ -19,8 +19,9 @@ bot.command("id", async (msg) => {
       msg.chat.id,
       dp.photos[0][dp.photos[0].length - 1].file_id,
       {
+        caption: "string",
         reply_to_message_id: msg.message.message_id,
-        parse_mode: "HTML"
+        parse_mode: "Markdown",
       }
     );
   }
