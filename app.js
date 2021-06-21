@@ -20,6 +20,7 @@ bot.command("id", async (msg) => {
       dp.photos[0][dp.photos[0].length - 1].file_id,
       {
         reply_to_message_id: msg.message.message_id,
+        parse_mode: "HTML"
       }
     );
   }
