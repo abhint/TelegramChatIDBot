@@ -5,8 +5,14 @@ dotenv.config();
 
 const bot = new Telegraf(process.env.BOT_TOKEN);
 
-bot.start((msg) => {msg.reply("Hello")});
+bot.start((msg) => {
+  msg.reply("Hello");
+});
 
-bot.command("id", (msg) => {console.log(msg)});
+bot.command("id", (msg) => {
+  bot.telegram.sendMessage(msg.chat.id, "Hello World!", {
+    reply_to_message_id: msg.message.message_id,
+  });
+});
 
 bot.launch();
