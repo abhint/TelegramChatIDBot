@@ -10,15 +10,18 @@ bot.start((msg) => {
 });
 
 bot.command("id", async (msg) => {
-//   console.log(msg.chat);
+  //   console.log(msg.chat);
   if (msg.message.reply_to_message != undefined) {
     console.log("Hello");
   } else {
-    const dp = await bot.telegram.getUserProfilePhotos(msg.chat.id)
-    console.log(dp.photos[0][dp.photos[0].length - 1].file_id);
-    await bot.telegram.sendMessage(msg.chat.id, "Hello World!", {
-      reply_to_message_id: msg.message.message_id,
-    });
+    const dp = await bot.telegram.getUserProfilePhotos(msg.chat.id);
+    await bot.telegram.sendPhoto(
+      msg.chat.id,
+      dp.photos[0][dp.photos[0].length - 1].file_id,
+      {
+        reply_to_message_id: msg.message.message_id,
+      }
+    );
   }
 });
 
