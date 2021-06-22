@@ -10,7 +10,7 @@ bot.start((msg) => {
 });
 
 bot.command("id", async (msg) => {
-  console.log(msg.from);
+  console.log(msg.message.from);
   if (msg.message.reply_to_message != undefined) {
     console.log("Hello");
   } else {
@@ -19,7 +19,12 @@ bot.command("id", async (msg) => {
       msg.chat.id,
       dp.photos[0][dp.photos[0].length - 1].file_id,
       {
-        caption: `Chat ID: <pre>${msg.chat.id}</pre>\nFirst Name: ${msg.chat.first_name.replace(/[<>/]/g, '')}`,
+        caption: `ID: <pre>${
+          msg.chat.id
+        }</pre>\nFirst Name: ${msg.chat.first_name.replace(
+          /[<>/]/g,
+          ""
+        )}\nUsername: @${msg.from.username}`,
         reply_to_message_id: msg.message.message_id,
         parse_mode: "HTML",
       }
