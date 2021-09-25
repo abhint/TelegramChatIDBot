@@ -1,8 +1,8 @@
 import bot from "./app/bot";
 import { onCommands } from "./app/commands";
-import { onMessage } from "./app/plugin/onText";
+import { onPlugin } from "./app/plugin";
 (async () => {
   await onCommands();
-  bot.use(onMessage)
+  await onPlugin();
   await bot.launch();
 })();
