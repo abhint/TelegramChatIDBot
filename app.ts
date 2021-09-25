@@ -1,6 +1,8 @@
 import bot from "./app/bot";
-import { onStart } from "./app/commands/start";
+import { onCommands } from "./app/commands";
+import { onMessage } from "./app/plugin/onmsg";
 (async () => {
-  bot.use(onStart);
+  await onCommands();
+  bot.use(onMessage)
   await bot.launch();
 })();
