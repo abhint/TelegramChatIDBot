@@ -3,3 +3,6 @@ node_modules
 
 #.py
 .py
+
+#.env
+.env
