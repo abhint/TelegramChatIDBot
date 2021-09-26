@@ -4,5 +4,8 @@ import { onPlugin } from "./app/plugin";
 (async () => {
   await onCommands();
   await onPlugin();
-  await bot.launch();
+  await bot.launch({webhook:{
+    domain: String(process.env.URL),
+    port: Number(process.env.PORT)
+  }});
 })();
