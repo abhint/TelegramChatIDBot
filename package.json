@@ -4,7 +4,12 @@
   "description": "Telegaram JSON",
   "main": "index.js",
   "scripts": {
-    "test": "nodemon app.ts"
+    "start": "node app.js",
+    "test": "nodemon app.ts",
+    "build": "tsc",
+    "watch-node": "nodemon app.js",
+    "watch-ts": "tsc -w",
+    "deploy": "git add . && git commit -m Heroku && git push heroku master"
   },
   "repository": {
     "type": "git",
