@@ -2,7 +2,7 @@
   "name": "telegramchatidbot",
   "version": "0.1.0",
   "description": "Telegaram JSON",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "test": "nodemon app.ts",
