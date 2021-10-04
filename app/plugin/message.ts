@@ -2,7 +2,6 @@ import { Composer } from "telegraf";
 
 export const onCommandID = Composer.command("/id", async (msg) => {
   let onUpdate: any = msg.message;
-  console.log(msg.message);
 
   if (msg.message.reply_to_message == undefined) {
     msg.telegram.sendMessage(
