@@ -13,6 +13,9 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 16
+      - name: set env
+        env:
+          BOT_TOKEN: ${{secrets.BOT_TOKEN}}
       - run: npm ci
       - run: npm test
       - run: npm run build
