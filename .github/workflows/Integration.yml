@@ -1,5 +1,5 @@
 
-name: Node telegram bot
+name: node telegram bot
 
 on:
   pull_request:
@@ -18,10 +18,10 @@ jobs:
         env:
           TEST_ENV: ${{ secrets.TEST_ENV }}
       - run: npm ci
+      - run: npm run build
       - run: npm test
         env: 
           BOT_TOKEN: ${{secrets.BOT_TOKEN}}
-      - run: npm run build
       - name: Run a multi-line script
         run: |
           echo Add other actions to build,
