@@ -17,13 +17,14 @@ jobs:
         run: echo "Tags are > ${TEST_ENV}"
         env:
           TEST_ENV: ${{ secrets.TEST_ENV }}
-      - name: set env
-        env:
-          BOT_TOKEN: ${{secrets.BOT_TOKEN}}
       - run: npm ci
       - run: npm test
+        env: 
+          BOT_TOKEN: ${{secrets.BOT_TOKEN}}
       - run: npm run build
       - name: Run a multi-line script
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+        env: 
+          BOT_TOKEN: ${{secrets.BOT_TOKEN}}
