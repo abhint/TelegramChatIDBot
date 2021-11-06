@@ -13,6 +13,10 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 16
+      - name: Define variables
+        run: echo "Tags are > ${TEST_ENV}"
+        env:
+          TEST_ENV: ${{ secrets.TEST_ENV }}
       - name: set env
         env:
           BOT_TOKEN: ${{secrets.BOT_TOKEN}}
